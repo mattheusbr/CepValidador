@@ -32,10 +32,11 @@ Configurar migrations:
 As seguintes ferramentas foram usadas na construção do projeto:
 
 
--   **[HTML5](https://html.spec.whatwg.org/)**
--   **[CSS](#)**
--  **[Entity Framework](#)**
+-  **[HTML5](https://html.spec.whatwg.org/)**
+-  **[CSS](#)**
+-  **[Bootstrap](#)**
 -  **[C#](#)**
+-  **[Entity Framework](#)**
 -  **[Asp.Net MVC](#)**
 
 ---
