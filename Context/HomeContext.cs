@@ -13,5 +13,7 @@ namespace ValidadorCep.Context
         {
         }
         public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+
     }
 }

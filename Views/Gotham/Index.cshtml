@@ -1,0 +1,84 @@
+﻿
+@model IEnumerable<ValidadorCep.Models.Endereco>
+@{
+    ViewBag.Title = "Inicio ";
+}
+
+<p>
+    @Html.ActionLink("Incluir novo CEP", "Adicionar", "GothamController", new { @class = "btn btn-success ml-md-3" })
+</p>
+
+
+<div class="card mb-3">
+    @Html.AntiForgeryToken()
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CEP)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cidade)
+                        </th>
+                        <th>Alterações</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CEP)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cidade)
+                        </th>
+                        <th>Alterações</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.CEP
+                            </td>
+                            <td>
+                                @item.Cidade
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Editar", new { id = item.Id }, new { @class = "btn btn-sm btn-warning" })
+                                @{ ViewBag.Id_Endereco = item.Id; }
+                                <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deletarModal">Deletar</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deletarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Você deseja deletar esse CEP?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Se deseja deletar selecione "Deletar", se foi um engano selecione "Cancelar".</div>
+            <div class="modal-footer">
+                @using (Html.BeginForm("Deletar", "Gotham", new { Id = ViewData["Id_Endereco"] }, FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <input type="submit" class="btn btn-danger" value="Deletar" />
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

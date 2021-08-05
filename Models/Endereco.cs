@@ -8,6 +8,7 @@ namespace ValidadorCep.Models
 {
     public class Endereco
     {
+        [Key]
         public int Id { get; set; }
         [Required]
         public string CEP { get; set; }

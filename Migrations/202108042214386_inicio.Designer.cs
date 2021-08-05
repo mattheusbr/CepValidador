@@ -7,13 +7,13 @@ namespace ValidadorCep.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class subindo : IMigrationMetadata
+    public sealed partial class inicio : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(subindo));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(inicio));
         
         string IMigrationMetadata.Id
         {
-            get { return "202108040246178_subindo"; }
+            get { return "202108042214386_inicio"; }
         }
         
         string IMigrationMetadata.Source

@@ -130,16 +130,20 @@
     <Compile Include="Business\Valida.cs" />
     <Compile Include="Context\HomeContext.cs" />
     <Compile Include="Controllers\GothamController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="DAO\GothamCepDao.cs" />
+    <Compile Include="DAO\UsuarioDao.cs" />
+    <Compile Include="Filter\AutenticacaoFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108040246178_subindo.cs" />
-    <Compile Include="Migrations\202108040246178_subindo.designer.cs">
-      <DependentUpon>202108040246178_subindo.cs</DependentUpon>
+    <Compile Include="Migrations\202108042214386_inicio.cs" />
+    <Compile Include="Migrations\202108042214386_inicio.designer.cs">
+      <DependentUpon>202108042214386_inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -175,10 +179,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Gotham\About.cshtml" />
-    <Content Include="Views\Gotham\Contact.cshtml" />
-    <Content Include="Views\Gotham\Index.cshtml" />
     <Content Include="Views\Gotham\Adicionar.cshtml" />
+    <Content Include="Views\Gotham\Index.cshtml" />
+    <Content Include="Views\Login\Criar.cshtml" />
+    <Content Include="Views\Login\Autentica.cshtml" />
+    <Content Include="Views\Gotham\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -197,8 +202,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202108040246178_subindo.resx">
-      <DependentUpon>202108040246178_subindo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108042214386_inicio.resx">
+      <DependentUpon>202108042214386_inicio.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
